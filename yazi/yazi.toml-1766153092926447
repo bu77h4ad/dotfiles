@@ -1,0 +1,6 @@
+[manager]
+show_hidden = false      # По умолчанию не показывать
+show_symlink = true      # Показывать символические ссылки
+sort_by = "modified"     # Сортировка
+sort_dir_first = true    # Папки первыми
+sort_reverse = false     # Обычный порядок

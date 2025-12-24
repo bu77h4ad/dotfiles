@@ -1,0 +1,137 @@
+    * {
+    border: none;
+    border-radius: 25px;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 5 Free";
+    font-size: 13px;
+    min-height: 0;
+    /*margin: 1px 1px 0px 1px ;*/
+    }
+
+    window#waybar {
+        background: rgba(30, 30, 46, 0.0);
+        color: #cdd6f4;
+/*      border-bottom: 1px solid #313244; */
+
+    }
+
+    #workspaces button {
+    margin: 0px;
+    padding: 0 10px;
+    color: #bac2de;
+    /*background: transparent;*/
+    background: #313244;
+    margin: 0px 0px;
+    /*border-radius: 6px;*/
+    /*border: 1px solid #bac2de;*/
+    transition: 0.1s;
+    }
+
+    #workspaces button.focused {
+    color: #89b4fa;
+    background: #313244;
+    }
+
+    #workspaces button:hover {
+    background: #45475a;
+    }
+
+    #workspaces button.urgent {
+    color: #f38ba8;
+    }
+
+    #workspaces button.active {
+    /*color: #ff1b18;*/
+    color: #89b4fa;
+    border: 2px solid #bac2de;
+    padding: 0 15px;
+    }
+
+    /* Для группировки */
+    #workspaces {
+    margin: 1px 1px 0px 1px ;
+    padding: 0 10px;
+    border-radius: 25px;
+    background-color: #313244;
+    /*border: 1px solid #bac2de;*/
+    }
+
+    #clock, #cpu, #memory, #temperature, #battery, #pulseaudio, #network, #tray {
+    background: #313244;
+
+    padding: 0 12px;
+    color: #cdd6f4;
+    margin: 1px 1px 0px 1px ;
+    }
+
+    #custom-launcher {
+    background: #313244;
+    padding: 0 12px;
+    color: #89b4fa;
+    font-size: 16px;
+    /*border-radius: 6px;*/
+    margin: 1px 1px 0px 1px ;
+    }
+
+    #window{
+    background: #313244;
+    padding: 0 12px;
+    color: #89b4fa;
+    font-size: 16px;
+    /*border-radius: 6px;*/
+    margin: 1px 1px 0px 1px ;
+    }
+    /* Стили для разных классов окон */
+    /*#window.firefox {
+    color: #ff9500;
+    background-color: rgba(255, 149, 0, 0.1);
+    }
+
+    #window.kitty {
+    color: #00ff9d;
+    background-color: rgba(0, 255, 157, 0.1);
+    }
+
+    #window.empty {
+    color: #666666;
+    font-style: italic;
+    background-color: rgba(0, 255, 157, 0.5);
+    }*/
+
+    #clock {
+    background: #313244;
+
+    }
+
+    #cpu {
+    color: #94e2d5;
+    }
+
+    #memory {
+    color: #cba6f7;
+    }
+
+    #temperature {
+    color: #fab387;
+    }
+
+    #battery {
+    color: #a6e3a1;
+    }
+
+    #battery.critical {
+    color: #f38ba8;
+    }
+
+    #pulseaudio {
+    color: #89b4fa;
+    }
+
+    #network {
+    color: #f9e2af;
+    }
+
+    #tray {
+    background: #313244;
+
+    }
+

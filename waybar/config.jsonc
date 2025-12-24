@@ -1,0 +1,144 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 25,
+  "spacing": 0,
+
+  "modules-left": ["custom/launcher", "hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery","clock", "tray"],
+
+  // Модуль запуска приложений
+  "custom/launcher": {
+    "format": "app",
+    "on-click": "wofi --show drun",
+    "tooltip": false
+  },
+// Название окна
+    "hyprland/window": {
+        "format": "{title}",
+        //"format-window-empty": "Desktop",
+        "separate-outputs": false,
+        "max-length": 50,
+        "tooltip": true,
+/*        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌐 $1",
+            "(.*) - Discord": "💬 $1",
+            "(kitty)": "🐱 $1",
+            "(Alacritty)": "🐚 $1",
+            "(code)": "{}"
+        },
+        "format-icons": {
+    "firefox": "🌐",
+    "chromium": "🌐",
+    "kitty": "🐱",
+    "Alacritty": "🐚",
+    "code": "{}",      // {} - подставить заголовок
+    "discord": "💬",
+    "spotify": "🎵",
+    "vlc": "🎬",
+    "steam": "🎮",
+    "nautilus": "📁",
+    "gimp": "🎨",
+    "libreoffice": "📄",
+    "default": "🪟"
+}*/
+    },
+
+  // Рабочие столы Hyprland
+  "hyprland/workspaces": {
+    //"output": "HDMI-A-2",
+    "format": "{icon}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    /*"active-only": false,*/
+    "all-outputs": true,
+    "format-icons": {
+
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+        // Состояния
+        //"active": "●",      /*# Текущий workspace*/
+        "default": "○",     /*# Обычный неактивный*/
+        "urgent": "⚠",      /*# Требует внимания*/
+        "empty": "·",       /*# Пустой workspace*/
+        "focused": "",     /*# Альтернативный active*/
+        "occupied": ""     /*# Workspace с окнами*/
+    },
+
+  },
+
+  // Часы
+  "clock": {
+    "format": "{:%H:%M | %d.%m.%Y}",
+    "tooltip-format": "{:%A, %d %B %Y | %H:%M}",
+    "interval": 1
+  },
+
+  // Звук
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": " Muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "scroll-step": 5
+  },
+
+  // Сеть
+  "network": {
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": "⚠ No connection",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
+    "on-click": "nm-connection-editor"
+  },
+
+  // CPU
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5
+  },
+
+  // Память
+  "memory": {
+    "format": " {percentage}%",
+    "interval": 5,
+    "on-click": "plasma-systemmonitor"
+  },
+
+  // Температура
+//  "temperature": {
+//    "thermal-zone": 0,
+//   "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input",
+//    "format": "{icon} {temperatureC}°C",
+//   "format-icons": ["", "", "", "", ""],
+//    "critical-threshold": 80
+//  },
+
+  // Батарея
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "interval": 10
+  },
+
+  // Системный трей
+  "tray": {
+    "spacing": 10,
+    "icon-size": 16
+  }
+}
