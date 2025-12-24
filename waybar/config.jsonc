@@ -6,7 +6,7 @@
 
   "modules-left": ["custom/launcher", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery","clock", "tray"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery","hyprland/language","clock", "tray"],
 
   // Модуль запуска приложений
   "custom/launcher": {
@@ -72,6 +72,18 @@
 
   },
 
+  "hyprland/language": {
+    "format": "{short}",
+//    "format-en": "🇺🇸",
+//    "format-ru": "🇷🇺",
+//    "format-ua": "🇺🇦",
+//    "format-de": "🇩🇪",
+//    "format-fr": "🇫🇷",
+//    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next",
+//    "tooltip": false,
+    //"keyboard-name": "at-translated-set-2-keyboard"
+  },
+
   // Часы
   "clock": {
     "format": "{:%H:%M | %d.%m.%Y}",
@@ -113,6 +125,7 @@
     "interval": 5,
     "on-click": "plasma-systemmonitor"
   },
+
 
   // Температура
 //  "temperature": {
