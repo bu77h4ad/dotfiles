@@ -5,6 +5,11 @@
 { config, pkgs, ... }:
 
 {
+  nix.settings.substituters = [
+    "https://mirror.yandex.ru/nix-channels/store"
+    "https://cache.nixos.org"
+  ];
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -27,6 +32,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.packages = [
+    pkgs.networkmanager-openvpn
+  ];
 
   # Set your time zone.
   time.timeZone = "Europe/Moscow";
@@ -52,7 +60,7 @@
   # Enable the GNOME Desktop Environment.
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome.enable = true;
-  services.displayManager.sddm.enable = true;  
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
@@ -144,7 +152,7 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-  
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Глобальные настройки Home Manager
@@ -163,6 +171,9 @@
       kitty
       telegram-desktop
       firefox
+      remmina
+      #openvpn
+      #networkmanager-openvpn
       #starship
       #thunderbird  # если нужно
     ];
@@ -236,7 +247,7 @@
     enable = true;
     # Starship сам добавит свою инициализацию в нужное место
     };
-  #programs.firefox.enable = true;
+
 
     # Сюда же в будущем можно перенести настройки zsh/fish/starship, если захотите
   };
