@@ -32,7 +32,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networkmanager.packages = [
+  networking.networkmanager.plugins = [
     pkgs.networkmanager-openvpn
   ];
 
@@ -218,11 +218,13 @@
 
       # 1. Задание цветовой темы оформления (выберите любую из репозитория)
       # Популярные темы: "Tokyo Night", "Catppuccin-Mocha", "One Dark", "Gruvbox Dark Hard"
-      theme = "Ayu";
+      #themeFile = "Ayu_Mirage";
+      themeFile = "ayu";
 
       # 2. Настройки шрифтов и эффектов (включая трейлинг курсора)
       settings = {
         # Настройки формы курсора
+        #include = "themes/ayu.conf";
         cursor_shape = "block";
         cursor_blink_interval = "0.5";
 
