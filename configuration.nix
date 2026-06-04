@@ -14,7 +14,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # Загружаем Home Manager из официальных каналов
-      <home-manager/nixos>
+      #<home-manager/nixos>
     ];
 
   # Bootloader.
@@ -172,14 +172,16 @@
       telegram-desktop
       firefox
       remmina
-      #openvpn
+      freerdp
+      openvpn
+      libreoffice-fresh
       #networkmanager-openvpn
       #starship
       #thunderbird  # если нужно
     ];
 
     # --- ЗДЕСЬ БУДУТ НАСТРОЙКИ ВАШИХ ПРОГРАММ ---
-      programs.zsh = {
+    programs.zsh = {
       enable = true;
       enableCompletion = true; # Включает базовое автодополнение
       autosuggestion.enable = true; # Подсказки на основе истории (как в Fish)
@@ -208,7 +210,7 @@
         ];
       };
 
-  };
+    };
 
     # Настройка терминала Kitty
     programs.kitty = {
